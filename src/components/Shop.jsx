@@ -7,14 +7,14 @@ export default function Shop() {
 
       <div className="shop-container">
         <nav className="shop-nav">
-          <h1>SHOPS / ALLL</h1>
+          <h1>SHOPS / ALL</h1>
 
 
           <ul>
-            <li>ALL</li>
-            <li>PHONES</li>
-            <li>TABLETS</li>
-            <li>LAPTOPS</li>
+            <li className="shop-nav-item" data-shop-nav="ALL">ALL</li>
+            <li className="shop-nav-item" data-shop-nav="PHONES">PHONES</li>
+            <li className="shop-nav-item" data-shop-nav="TABLETS">TABLETS</li>
+            <li className="shop-nav-item" data-shop-nav="LAPTOPS">LAPTOPS</li>
           </ul>
         </nav> 
 

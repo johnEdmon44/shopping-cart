@@ -158,3 +158,26 @@ body {
   margin-right: 3%;
   padding: 1%;
 }
+
+
+/* shop nav hover */
+.shop-nav-item {
+  position: relative;
+}
+
+
+.shop-nav-item::before {
+  content: attr(data-shop-nav);
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+
+.shop-nav-item:hover::before {
+  opacity: 0.3;
+  top: 10px;
+  left: 10px;
+}
