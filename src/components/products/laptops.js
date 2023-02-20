@@ -4,6 +4,7 @@ const phones = [{
   price: 499,
   img: "",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+  category: "laptop",
   specs: [{
     cpu: "",
     gpu: "",
@@ -16,6 +17,7 @@ const phones = [{
   name: "Laptop 2",
   price: 499,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+  category: "laptop",
   img: "",
   specs: [{
     cpu: "",
@@ -30,6 +32,7 @@ const phones = [{
   price: 499,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
   img: "",
+  category: "laptop",
   specs: [{
     cpu: "",
     gpu: "",
@@ -40,6 +43,7 @@ const phones = [{
 },{
   id: 4004,
   name: "Laptop 4",
+  category: "laptop",
   price: 499,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
   img: "",
