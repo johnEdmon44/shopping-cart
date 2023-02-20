@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <nav>
-      <h1>Shopping cart</h1>
+      <h1>FAKE STORE</h1>
 
       <ul>
         <li className="nav-item" data-text="Home">
