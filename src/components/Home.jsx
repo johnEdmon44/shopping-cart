@@ -1,11 +1,16 @@
 import Navbar from "./Navbar";
+import Xiaomi from "./assets/Xiaomi.mp4"
 
 export default function Home() {
   return (
-    <>
+    <section className="home">
       <Navbar />
 
-      <h1>Home</h1>
-    </>
+      <div>
+        <video id="full-page-video" autoPlay muted loop>
+          <source src={Xiaomi}></source>
+        </video>
+      </div>
+    </section>
   )
 }
