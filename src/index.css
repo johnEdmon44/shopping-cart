@@ -15,7 +15,7 @@ body {
 
 
 /* Navbar */
-nav {
+.main-nav {
   display: flex;
   justify-content: space-between;
   background-color: black;
@@ -24,17 +24,17 @@ nav {
 }
 
 
-nav ul {
+.main-nav ul {
   display: flex;
 }
 
 
-nav li {
+.main-nav li {
   list-style-type: none;
 }
 
 
-nav a {
+.main-nav a {
   text-decoration: none;
   color: white;
   padding: 1rem;
@@ -43,13 +43,13 @@ nav a {
 }
 
 
-nav h1 {
+.main-nav h1 {
   letter-spacing: 10px;
   font-family: "Abel", sans-serif;
 }
 
 
-nav > * {
+.main-nav > * {
   padding: 1rem;
   align-items: center;
 }
