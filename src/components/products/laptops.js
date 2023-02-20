@@ -1,4 +1,4 @@
-const phones = [{
+export const laptop = [{
   id: 4001,
   name: "Laptop 1",
   price: 499,

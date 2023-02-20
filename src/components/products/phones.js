@@ -1,4 +1,4 @@
-const phones = [{
+export const phones = [{
   id: 1,
   name: "Phone 1",
   price: 499,

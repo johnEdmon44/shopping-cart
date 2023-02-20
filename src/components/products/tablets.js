@@ -1,4 +1,4 @@
-const phones = [{
+export const tablets = [{
   id: 1001,
   name: "Tablet 1",
   price: 499,

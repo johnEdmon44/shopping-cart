@@ -21,6 +21,8 @@ body {
   background-color: black;
   color: white;
   align-items: center;
+  position: fixed;
+  width: 100vw;
 }
 
 
@@ -86,6 +88,7 @@ body {
 /* Home */
 
 #full-page-video {
+  margin-top: 9.7vh;
   height: 90vh;
   width: 100vw;
   object-fit: cover;
@@ -101,9 +104,10 @@ body {
 
 /* shop nav */
 .shop-nav {
-  margin-top: 5%;
+  margin-top: 10%;
   margin-left: 5%;
   letter-spacing: 1rem;
+  position: fixed;
 }
 
 
@@ -126,11 +130,12 @@ body {
 
 
 .items-container {
-  margin-top: 7%;
+  margin-top: 10%;
   margin-right: 5%;
-  margin-left: 10%;
+  margin-left: 35%;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto;
   gap: 20px ;
 }
 
