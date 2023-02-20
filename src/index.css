@@ -1,5 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+
+/* Navbar */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+}
+
+
+nav ul {
+  display: flex;
+}
+
+
+nav li {
+  list-style-type: none;
+}
+
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  margin-inline: 4rem;
+  letter-spacing: 1rem;
+}
+
+
+nav h1 {
+  letter-spacing: 10px;
+  font-family: "Abel", sans-serif;
+}
+
+
+nav > * {
+  padding: 1.5rem;
+  align-items: center;
+}
+
+
+/* Nav-hover */
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.nav-item::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0px;
+  left: 80px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  padding: 10px;
+  letter-spacing: 1rem;
+}
+
+.nav-item:hover::before {
+  opacity: 0.5;
+  top: -20px;
+  left: 0px;
 }
