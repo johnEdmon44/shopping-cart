@@ -7,15 +7,8 @@ export default function Home() {
       <Navbar />
 
       <div>
-        <video
-          autoPlay=""
-          id="full-page-video"
-          loop=""
-          role="video"
-        >
-          <source
-            src="/src/components/assets/Xiaomi.mp4"
-          />
+        <video id="full-page-video" autoPlay muted loop role="video">
+          <source src={Xiaomi}></source>
         </video>
       </div>
     </section>
