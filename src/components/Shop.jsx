@@ -20,6 +20,8 @@ export default function Shop() {
   }
 
 
+  const selectedCategoryCount = filteredProducts.length;
+
   
   return (
     <section className="shop">
@@ -28,14 +30,14 @@ export default function Shop() {
       <div className="shop-container">
         <nav className="shop-nav">
           <h1>SHOP / <br />
-            <span style={{fontSize: "1.5rem", fontWeight: "bolder"}}>{selectedCategory}</span>
+            <span style={{fontSize: "1.5rem", fontWeight: "bolder"}}>{selectedCategory}  <span style={{color: "red"}}>{selectedCategoryCount}</span></span>
           </h1>
 
           <ul>
-            <li onClick={() => setSelectedCategory("ALL")} className="shop-nav-item" data-shop-nav="ALL">ALL</li>
-            <li onClick={() => setSelectedCategory("PHONES")} className="shop-nav-item" data-shop-nav="PHONES">PHONES</li>
-            <li onClick={() => setSelectedCategory("TABLETS")} className="shop-nav-item" data-shop-nav="TABLETS">TABLETS</li>
-            <li onClick={() => setSelectedCategory("LAPTOPS")} className="shop-nav-item" data-shop-nav="LAPTOPS">LAPTOPS</li>
+            <li onClick={() => setSelectedCategory("ALL")} className="shop-nav-item" data-testid="ALL">ALL</li>
+            <li onClick={() => setSelectedCategory("PHONES")} className="shop-nav-item" data-testid="PHONES">PHONES</li>
+            <li onClick={() => setSelectedCategory("TABLETS")} className="shop-nav-item" data-testid="TABLETS">TABLETS</li>
+            <li onClick={() => setSelectedCategory("LAPTOPS")} className="shop-nav-item" data-testid="LAPTOPS">LAPTOPS</li>
           </ul>
         </nav> 
 
@@ -47,7 +49,7 @@ export default function Shop() {
                   <p>img</p>
                 </div>
             
-                <p>{product.name}</p>
+                <p data-testid="product-name">{product.name}</p>
                 <p>{product.price}</p>
               </div>
             ))}
