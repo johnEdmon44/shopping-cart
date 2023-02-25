@@ -1,6 +1,10 @@
 import Shop from "../Shop";
 import { describe, expect, it } from "vitest";
 import { render, screen, fireEvent, getByText} from "@testing-library/react";
+import { phones } from "../products/phones";
+import { laptop } from "../products/laptops";
+import { tablets } from "../products/tablets";
+
 
 describe('Shop', () => {
   it('Render correct shop category when nav item is clicked', () => {
@@ -23,11 +27,18 @@ describe('Shop', () => {
   it('renders all products when "ALL" category is selected', () => {
     render(<Shop />);
     
-    // find all product names
+    // select a category
+    const phonesCategory = screen.getByTestId('PHONES');
+    fireEvent.click(phonesCategory);
+
+    // check if the correct products are displayed based on the selected category
     const productNames = screen.getAllByTestId('product-name');
+    const filteredProducts = phones;
+    const filteredProductNames = filteredProducts.map(product => product.name);
+    productNames.forEach(productName => {
+      expect(filteredProductNames).toContain(productName.textContent);
+    });
     
-    // check that all products are displayed
-    expect(productNames.length).toEqual(12); // change 6 to the actual number of products in the "ALL" category
   });
 
 });
