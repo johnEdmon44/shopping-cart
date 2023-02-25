@@ -173,7 +173,7 @@ body {
 
 
 .shop-nav-item::before {
-  content: attr(data-shop-nav);
+  content: attr(data-testid);
   position: absolute;
   top: 30px;
   left: 30px;
