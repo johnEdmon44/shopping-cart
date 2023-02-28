@@ -19,21 +19,7 @@ export default function Shop() {
     filteredProducts = [...phones, ...tablets, ...laptop];
   }
 
-
   const selectedCategoryCount = filteredProducts.length;
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const openModal = (product) => {
-    setSelectedProduct(product);
-    const modal = document.querySelector(".modal");
-    modal.style.display = "block";
-  };
-
-  const closeModal = () => {
-    setSelectedProduct(null);
-    const modal = document.querySelector(".modal");
-    modal.style.display = "none";
-  }
 
   
   return (
@@ -57,7 +43,7 @@ export default function Shop() {
 
         <div className="items-container">
             {filteredProducts.map((product, index) => (
-              <div className="item" onClick={() => setSelectedProduct(product)} key={index}>
+              <div className="item" key={index}>
                 <div className="item-img">
                   <p>img</p>
                 </div>
