@@ -3,6 +3,7 @@ import { useState } from "react";
 import { phones } from "./products/phones";
 import { laptop } from "./products/laptops";
 import { tablets } from "./products/tablets";
+import { Link } from "react-router-dom";
 
 export default function Shop() {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
@@ -43,14 +44,14 @@ export default function Shop() {
 
         <div className="items-container">
             {filteredProducts.map((product, index) => (
-              <div className="item" key={index}>
-                <div className="item-img">
-                  <p>img</p>
-                </div>
-            
-                <p data-testid="product-name">{product.name}</p>
-                <p>{product.price}</p>
-              </div>
+              <Link to={`/product/${product.id}`} className="item" key={index}>
+                  <div className="item-img">
+                    <p>img</p>
+                  </div>
+              
+                  <p data-testid="product-name">{product.name}</p>
+                  <p>{product.price}</p>
+              </Link>
             ))}
         </div>
       </div>
