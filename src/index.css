@@ -187,3 +187,29 @@ body {
   top: 10px;
   left: 10px;
 }
+
+
+/* Product */
+
+.product-container {
+  padding-top: 8%;
+  margin-left: 3%;
+}
+
+
+.product-container div:first-child {
+  color: grey;
+  display: flex;
+  gap: 1%;
+}
+
+
+.product-container div:first-child a {
+  text-decoration: none;
+  color: grey;
+}
+
+.product-container div:first-child a:hover {
+  text-decoration: underline;
+  color: grey;
+}

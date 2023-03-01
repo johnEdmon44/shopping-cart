@@ -19,12 +19,21 @@ export default function Product() {
   return (
     <section>
       <Navbar />
-      <div className="product">
-        <h1>Product</h1>
-        <p>{product.name}</p>
-        <p>{product.price}</p>
-        <button>Add to cart</button>
+      <div className="product-container">
+        <div>
+          <a href="">Shop</a>
+          <p>&gt;</p>
+          <p>{product.name}</p>
+        </div>
+
+        <div className="product">
+          <h1>Product</h1>
+          <p>{product.name}</p>
+          <p>{product.price}</p>
+          <button>Add to cart</button>
+        </div>
       </div>
+
     </section>
   )
 }
