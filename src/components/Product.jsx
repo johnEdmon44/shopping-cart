@@ -5,7 +5,7 @@ import { laptop } from "./products/laptops";
 import { useParams } from "react-router-dom";
 
 
-export default function Product() {
+export default function Product({dispatch}) {
   const { id } = useParams();
   console.log(id);
 
@@ -14,6 +14,10 @@ export default function Product() {
 
   if (!product) {
     return <div>Product not found</div>;
+  }
+
+  const handleAddToCart = () => {
+    dispatch({ type: 'ADD_TO_CART', payload: product });
   }
 
   return (
@@ -30,7 +34,7 @@ export default function Product() {
           <h1>Product</h1>
           <p>{product.name}</p>
           <p>{product.price}</p>
-          <button>Add to cart</button>
+          <button onClick={handleAddToCart}>Add to cart</button>
         </div>
       </div>
 
