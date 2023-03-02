@@ -1,12 +1,10 @@
 import { useState } from 'react'
-import Home from './components/Home'
+import RouteSwitch from './RouteSwitch'
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <Home />
+      <RouteSwitch />
     </div>
   )
 }
-
-export default App
