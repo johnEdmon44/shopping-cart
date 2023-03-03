@@ -1,22 +1,22 @@
 export const paymentOptions = [{
   name: "paypal",
-  img: "",
+  img: "../assets/paymentIcons/paypal.jpg",
 }, {
   name: "paymaya",
-  img: "",
+  img: "../assets/paymentIcons/paymaya.png",
 }, {
   name: "master card",
-  img: "",
+  img: "../assets/paymentIcons/mastercard.png",
 }, {
   name: "gcash",
-  img: "",
+  img: "../assets/paymentIcons/gcash.png",
 }, {
   name: "bdo",
-  img: "",
+  img: "../assets/paymentIcons/bdo.png",
 }, {
   name: "visa",
-  img: "",
+  img: "../assets/paymentIcons/visa.png",
 }, {
   name: "american express",
-  img: "",
+  img: "../assets/paymentIcons/americanexpress.png",
 }]

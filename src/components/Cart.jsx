@@ -1,5 +1,7 @@
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import { paymentOptions } from "./data/paymentOptions";
+
 
 export default function Cart({ cart, dispatch }) {
   const handleRemoveFromCart = item => {
@@ -83,27 +85,11 @@ export default function Cart({ cart, dispatch }) {
               <h3>Payment options</h3>
 
               <div className="payment-icons-container">
-                
-                <div className="payment-icon">
-                  <p>img</p>
-                </div>
-
-                <div className="payment-icon">
-                  <p>img</p>
-                </div>
-
-                <div className="payment-icon">
-                  <p>img</p>
-                </div>
-
-                <div className="payment-icon">
-                  <p>img</p>
-                </div>
-
-                <div className="payment-icon">
-                  <p>img</p>
-                </div>
-
+                {paymentOptions.map((icon, index) => (
+                  <div className="payment-icon" key={index}>
+                    <img src={icon.img} alt={icon.name}></img>
+                  </div>
+                ))}
               </div>
             </div>
 
