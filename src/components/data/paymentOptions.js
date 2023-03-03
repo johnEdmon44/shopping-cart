@@ -1,6 +1,6 @@
 export const paymentOptions = [{
   name: "paypal",
-  img: "/public/assets/paymentLogo/paypal.jpg",
+  img: "/public/assets/paymentLogo/paypal.png",
 }, {
   name: "paymaya",
   img: "/public/assets/paymentLogo/paymaya.png",
