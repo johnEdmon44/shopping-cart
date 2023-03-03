@@ -1,8 +1,8 @@
 import Navbar from "./Navbar";
 import { useState } from "react";
-import { phones } from "./products/phones";
-import { laptop } from "./products/laptops";
-import { tablets } from "./products/tablets";
+import { phones } from "./data/phones";
+import { laptop } from "./data/laptops";
+import { tablets } from "./data/tablets";
 import { Link } from "react-router-dom";
 
 export default function Shop() {

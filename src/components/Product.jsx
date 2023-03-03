@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
-import { phones } from "./products/phones";
-import { tablets } from "./products/tablets";
-import { laptop } from "./products/laptops";
+import { phones } from "./data/phones";
+import { tablets } from "./data/tablets";
+import { laptop } from "./data/laptops";
 import { useParams } from "react-router-dom";
 
 
