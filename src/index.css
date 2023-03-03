@@ -14,7 +14,7 @@ body {
 }
 
 
-/* Navbar */
+/*///////////////////////////////////////////////////// navbar ///////////////////////////////////////////////////////////////*/
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -57,7 +57,7 @@ body {
 }
 
 
-/* Nav-hover */
+/*///////////////////////////////////////////////////// nav-hover ///////////////////////////////////////////////////////////////*/
 
 .nav-item {
   position: relative;
@@ -85,7 +85,7 @@ body {
 
 
 
-/* Home */
+/*///////////////////////////////////////////////////// Home ///////////////////////////////////////////////////////////////*/
 
 #full-page-video {
   margin-top: 9.7vh;
@@ -102,7 +102,7 @@ body {
 
 
 
-/* shop nav */
+/*///////////////////////////////////////////////////// shop nav ///////////////////////////////////////////////////////////////*/
 .shop-nav {
   margin-top: 10%;
   margin-left: 5%;
@@ -189,7 +189,7 @@ body {
 }
 
 
-/* Product */
+/*///////////////////////////////////////////////////// product ///////////////////////////////////////////////////////////////*/
 
 .product-container {
   padding-top: 8%;
@@ -212,4 +212,195 @@ body {
 .product-container div:first-child a:hover {
   text-decoration: underline;
   color: grey;
+}
+
+
+
+/* Cart */
+.empty-cart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgb(237, 238, 239);
+  font-size: 1.5rem;
+  box-shadow: -1px 5px 5px 0px rgba(206,197,197,0.75);
+}
+
+
+.empty-cart p {
+  margin-top: 4.5rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.empty-cart a {
+  text-decoration: none;
+  background-color: orange;
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  margin-bottom: 3.5rem;
+}
+
+
+.empty-cart a:hover {
+  opacity: 0.8;
+  transition: all 0.5s;
+}
+
+
+
+.cart-container {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 20rem;
+}
+
+
+.cart-img {
+  background-color: white;
+  padding: 2.5rem;
+}
+
+
+.cart-item {
+  background-color: rgb(237, 238, 239);
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: -4px 8px 5px -1px rgba(194, 199, 206, 0.75);
+}
+
+
+.cart-item > * {
+  margin: 2rem;
+}
+
+
+.cart-item div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.cart-item button {
+  border: none;
+  width: 5rem;
+  height: 2rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  background-color: orange;
+  color: white;
+  border-radius: 3px;
+}
+
+
+
+.cart-item div:first-child {
+  display: flex;
+  gap: .5rem;
+}
+
+
+
+.cart-total {
+  background-color: rgb(237, 238, 239);
+  width: 25rem;
+  height: 15rem;
+  box-shadow: -4px 8px 5px -1px rgba(194, 199, 206, 0.75);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.cart-total h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.cart-total > * {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .5rem;
+}
+
+
+.cart-total div:nth-child(4) {
+  border-top: 3px solid rgb(202, 196, 196);
+}
+
+
+.total-buttons {
+  cursor: pointer;
+}
+
+
+.total-buttons-container button:first-child{
+  background-color: red;
+  border: none;
+  width: 5rem;
+  height: 2rem;
+  color: white;
+  border-radius: 3px;
+}
+
+
+.total-buttons-container button:last-child{
+  background-color: orange;
+  border: none;
+  width: 5rem;
+  height: 2rem;
+  color: white;
+  border-radius: 3px;
+}
+
+
+.total-buttons:hover {
+  opacity: 0.6;
+  transition: all 0.5s;
+}
+
+
+.total-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+
+.payment-container {
+  margin-top: 3rem;
+  background-color: rgb(237, 238, 239);
+  width: 25rem;
+  height: 10rem;
+  box-shadow: -4px 8px 5px -1px rgba(194, 199, 206, 0.75);
+}
+
+
+.payment-container h3 {
+  padding-top: 1.5rem;
+}
+
+
+.payment-container > * {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
