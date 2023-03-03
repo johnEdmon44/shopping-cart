@@ -3,6 +3,7 @@ import { phones } from "./data/phones";
 import { tablets } from "./data/tablets";
 import { laptop } from "./data/laptops";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default function Product({dispatch}) {
@@ -25,7 +26,7 @@ export default function Product({dispatch}) {
       <Navbar />
       <div className="product-container">
         <div>
-          <a href="">Shop</a>
+          <Link to="/shop">Shop</Link>
           <p>&gt;</p>
           <p>{product.name}</p>
         </div>
