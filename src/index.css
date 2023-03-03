@@ -390,7 +390,6 @@ body {
   margin-top: 3rem;
   background-color: rgb(237, 238, 239);
   width: 25rem;
-  height: 10rem;
   box-shadow: -4px 8px 5px -1px rgba(194, 199, 206, 0.75);
 }
 
@@ -404,3 +403,20 @@ body {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
+
+
+.payment-icon {
+  height: 40px;
+  width: 50px;
+  border: 1px solid red;
+}
+
+
+.payment-icons-container {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  grid-gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 1.5rem;
+} 

@@ -78,9 +78,35 @@ export default function Cart({ cart, dispatch }) {
                 </div>            
             </div>
 
+
             <div className="payment-container">
               <h3>Payment options</h3>
+
+              <div className="payment-icons-container">
+                
+                <div className="payment-icon">
+                  <p>img</p>
+                </div>
+
+                <div className="payment-icon">
+                  <p>img</p>
+                </div>
+
+                <div className="payment-icon">
+                  <p>img</p>
+                </div>
+
+                <div className="payment-icon">
+                  <p>img</p>
+                </div>
+
+                <div className="payment-icon">
+                  <p>img</p>
+                </div>
+
+              </div>
             </div>
+
           </div>
         </div>
       )}
