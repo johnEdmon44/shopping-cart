@@ -86,9 +86,7 @@ export default function Cart({ cart, dispatch }) {
 
               <div className="payment-icons-container">
                 {paymentOptions.map((icon, index) => (
-                  <div className="payment-icon" key={index}>
-                    <img src={icon.img} alt={icon.name}></img>
-                  </div>
+                    <img src={icon.img} className="payment-icon" key={index}></img>
                 ))}
               </div>
             </div>
