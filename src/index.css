@@ -140,6 +140,12 @@ body {
 }
 
 
+.items-container a {
+  text-decoration: none;
+  color: black;
+}
+
+
 .item-img {
   height: 350px;
   width: 300px;
