@@ -32,10 +32,44 @@ export default function Product({dispatch}) {
         </div>
 
         <div className="product">
-          <h1>Product</h1>
-          <p>{product.name}</p>
-          <p>{product.price}</p>
-          <button onClick={handleAddToCart}>Add to cart</button>
+          <div className="product-img">
+            <p>img</p>
+          </div>
+
+          <div className="specs-container">
+            <strong>{product.name}</strong>
+            <br></br>
+            <strong>SPECIFICATIONS</strong>
+
+            <ul className="specs">
+              <li>
+                <strong>RAM</strong>
+                <p>8gb</p>
+              </li>
+
+              <li>
+                <strong>Storage</strong>
+                <p>256gb</p>
+              </li>
+
+              <li>
+                <strong>Cpu</strong>
+                <p>Cpu sample</p>
+              </li>
+
+              <li>
+                <strong>Gpu</strong>
+                <p>gpu sample</p>
+              </li>
+
+              <li>
+                <strong>Camera</strong>
+                <p>48mp</p>
+              </li>
+            </ul>
+            <button onClick={handleAddToCart}>ADD TO CART</button>
+          </div>
+
         </div>
       </div>
 

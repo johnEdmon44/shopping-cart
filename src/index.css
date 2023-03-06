@@ -215,9 +215,64 @@ body {
   color: grey;
 }
 
+
 .product-container div:first-child a:hover {
   text-decoration: underline;
   color: grey;
+}
+
+
+.product-img {
+  border: 1px solid red;
+  width: 20rem;
+  height: 25rem;
+}
+
+
+.product {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+
+.specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+}
+
+
+.specs li {
+  list-style-type: none;
+  padding: 1.5rem;
+}
+
+
+.specs-container > strong:first-of-type {
+  font-size: 2rem;
+  padding: 1.5rem;
+}
+
+.specs-container > strong:nth-of-type(2) {
+  letter-spacing: 5px;
+  padding: 1.5rem;
+}
+
+
+.specs-container button {
+  border: none;
+  background-color: orange;
+  color: black;
+  padding: 1rem;
+  cursor: pointer;
+  margin-left: 1.5rem;
+}
+
+
+.specs-container button:hover {
+  opacity: 0.8;
 }
 
 
