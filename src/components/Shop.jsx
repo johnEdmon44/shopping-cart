@@ -50,7 +50,7 @@ export default function Shop() {
                   </div>
               
                   <p data-testid="product-name">{product.name}</p>
-                  <p>{product.price}</p>
+                  <p>${product.price}</p>
               </Link>
             ))}
         </div>
