@@ -4,6 +4,7 @@ import { tablets } from "./data/tablets";
 import { laptop } from "./data/laptops";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
 export default function Product({dispatch}) {
@@ -19,7 +20,10 @@ export default function Product({dispatch}) {
 
   const handleAddToCart = () => {
     dispatch({ type: 'ADD_TO_CART', payload: product });
+    setAddedToCart(true)
   }
+
+  const [addedToCart, setAddedToCart] = useState(false);
 
   return (
     <section>
@@ -68,6 +72,7 @@ export default function Product({dispatch}) {
               </li>
             </ul>
             <button onClick={handleAddToCart}>ADD TO CART</button>
+            {addedToCart && <p>Added to cart successfully!</p>}
           </div>
 
         </div>
