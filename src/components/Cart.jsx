@@ -36,7 +36,9 @@ export default function Cart({ cart, dispatch }) {
                     </div>
 
                     <div>
-                      <strong>{item.name}</strong>
+                      <Link to={`/product/${item.id}`} style={{textDecoration: "none", color: "black"}}>
+                        <strong>{item.name}</strong>
+                      </Link>
                       <p>Price: ${item.price.toFixed(2)}</p>
                     </div>
                   </div>
