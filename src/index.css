@@ -23,6 +23,7 @@ body {
   align-items: center;
   position: fixed;
   width: 100vw;
+  height: 10vh;
 }
 
 
@@ -52,7 +53,8 @@ body {
 
 
 .main-nav > * {
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   align-items: center;
 }
 
