@@ -482,3 +482,26 @@ body {
   align-items: flex-start;
   padding-bottom: 1.5rem;
 } 
+
+
+@media (min-width: 2560px) {
+  html {
+    background-color: rgb(228, 228, 228);
+  }
+
+  #root {
+    width: 80vw;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: white;
+  }
+
+  .main-nav {
+    width: 80vw;
+  }
+
+  .item-img {
+    height: 30rem;
+    width: 30rem;
+  }
+}
