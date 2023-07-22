@@ -20,7 +20,7 @@ Welcome to the Shopping Cart application! This web-based application allows user
 
 ## Demo
 
-You can see a live demo of the Shopping Cart application [here](link-to-demo-if-available).
+You can see a live demo of the Shopping Cart application [here](https://johnedmon44.github.io/shopping-cart/).
 
 ## Getting Started
 
