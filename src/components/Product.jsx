@@ -1,21 +1,19 @@
 import Navbar from "./Navbar";
-import { phones } from "./data/phones";
-import { tablets } from "./data/tablets";
-import { laptop } from "./data/laptops";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import ProductsContext from "./productsContext";
 
 
 export default function Product({dispatch}) {
+  const { products }= useContext(ProductsContext);
   const { id } = useParams();
-  console.log(id);
+  const [addedToCart, setAddedToCart] = useState(false);
 
-  const products = [...phones, ...tablets, ...laptop];
-  const product = products.find((p) => p.id === Number(id));
+  const product = products.find((item) => item.id === Number(id));
 
-  if (!product) {
-    return <div>Product not found</div>;
+  if(!product) {
+    return <p>Loading...</p>
   }
 
   const handleAddToCart = () => {
@@ -23,7 +21,6 @@ export default function Product({dispatch}) {
     setAddedToCart(true)
   }
 
-  const [addedToCart, setAddedToCart] = useState(false);
 
   return (
     <section>
@@ -32,47 +29,24 @@ export default function Product({dispatch}) {
         <div>
           <Link to="/shop">Shop</Link>
           <p>&gt;</p>
-          <p>{product.name}</p>
+          <p>{product.title}</p>
         </div>
 
         <div className="product">
-          <div className="product-img">
-            <p>img</p>
-          </div>
+          <img src={product.image} alt={product.title} className="product-img"></img>
 
           <div className="specs-container">
-            <strong>{product.name}</strong>
+            <strong>{product.title}</strong>
+
             <br></br>
-            <strong>SPECIFICATIONS</strong>
 
-            <ul className="specs">
-              <li>
-                <strong>RAM</strong>
-                <p>8gb</p>
-              </li>
+            <p>{product.description}</p>
 
-              <li>
-                <strong>Storage</strong>
-                <p>256gb</p>
-              </li>
-
-              <li>
-                <strong>Cpu</strong>
-                <p>Cpu sample</p>
-              </li>
-
-              <li>
-                <strong>Gpu</strong>
-                <p>gpu sample</p>
-              </li>
-
-              <li>
-                <strong>Camera</strong>
-                <p>48mp</p>
-              </li>
-            </ul>
-            <button onClick={handleAddToCart}>ADD TO CART</button>
-            {addedToCart && <p>Added to cart successfully!</p>}
+            <div>
+              <strong>${product.price}</strong>
+              <button onClick={handleAddToCart}>ADD TO CART</button>
+              {addedToCart && <p>Added to cart successfully!</p>}
+            </div>
           </div>
 
         </div>

@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Product from "./components/Product";
 import Shop from "./components/Shop";
 import { cartReducer, initialCartState } from "./components/cartReducer"
+import { ProductsProvider } from "./components/productsContext";
 
 
 export default function RouteSwitch() {
@@ -13,12 +14,14 @@ export default function RouteSwitch() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />}/>
-        <Route path="/cart" element={<Cart cart={cart} dispatch={dispatch} />}/>
-        <Route path="/product/:id" element={<Product dispatch={dispatch} />} />
-      </Routes>
+      <ProductsProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />}/>
+          <Route path="/cart" element={<Cart cart={cart} dispatch={dispatch} />}/>
+          <Route path="/product/:id" element={<Product dispatch={dispatch} />} />
+        </Routes>
+      </ProductsProvider>
     </BrowserRouter>
   )
 }

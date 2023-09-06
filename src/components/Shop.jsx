@@ -1,59 +1,73 @@
 import Navbar from "./Navbar";
-import { useState } from "react";
-import { phones } from "./data/phones";
-import { laptop } from "./data/laptops";
-import { tablets } from "./data/tablets";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ProductsContext from "./productsContext";
 
 export default function Shop() {
-  const [selectedCategory, setSelectedCategory] = useState("ALL");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const {products, categories} = useContext(ProductsContext);
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
 
-  let filteredProducts;
-  if (selectedCategory === "PHONES") {
-    filteredProducts = phones;
-  } else if (selectedCategory === "TABLETS") {
-    filteredProducts = tablets;
-  } else if (selectedCategory === "LAPTOPS") {
-    filteredProducts = laptop;
-  } else {
-    filteredProducts = [...phones, ...tablets, ...laptop];
+  function filterProducts(category) {
+    setSelectedCategory(category);
   }
 
-  const selectedCategoryCount = filteredProducts.length;
 
+  useEffect(() => {
+    let newFilteredProducts;
+
+    if(selectedCategory === "all") {
+      newFilteredProducts = products;
+    } else {
+      newFilteredProducts = products.filter((product) => product.category === selectedCategory);
+    }
+
+    setFilteredProducts(newFilteredProducts);
+  }, [selectedCategory, products]);
   
+
   return (
     <section className="shop">
       <Navbar />
 
       <div className="shop-container">
+
         <nav className="shop-nav">
+          
           <h1>SHOP / <br />
-            <span style={{fontSize: "1.5rem", fontWeight: "bolder"}}>{selectedCategory}  <span style={{color: "red"}}>{selectedCategoryCount}</span></span>
+            <span style={{fontSize: "1.5rem", fontWeight: "bolder"}}>{selectedCategory}  <span style={{color: "red"}}></span></span>
           </h1>
 
           <ul>
-            <li onClick={() => setSelectedCategory("ALL")} className="shop-nav-item" data-testid="ALL">ALL</li>
-            <li onClick={() => setSelectedCategory("PHONES")} className="shop-nav-item" data-testid="PHONES">PHONES</li>
-            <li onClick={() => setSelectedCategory("TABLETS")} className="shop-nav-item" data-testid="TABLETS">TABLETS</li>
-            <li onClick={() => setSelectedCategory("LAPTOPS")} className="shop-nav-item" data-testid="LAPTOPS">LAPTOPS</li>
+            <li className="shop-nav-item" id="all" onClick={() => filterProducts("all")}>all</li>
+
+            {categories.map((category, index) => (
+              <li key={index} id={category} className="shop-nav-item" onClick={() => filterProducts(category)}>{category}</li>
+            ))}
           </ul>
         </nav> 
 
 
-        <div className="items-container">
-            {filteredProducts.map((product, index) => (
-              <Link to={`/product/${product.id}`} className="item" key={index}>
-                  <div className="item-img">
-                    <p>img</p>
+        <ul className="items-container">
+          {filteredProducts.map((product) => (
+            <li className="item" id={product.id} key={product.id}>
+              <Link to={`/product/${product.id}`}>
+
+                <div className="item-img-container">
+                  <img src={product.image} alt={product.title} className="item-img"></img>
+
+                  <div className="see-more">
+                    <p>See more</p>
                   </div>
-              
-                  <p data-testid="product-name">{product.name}</p>
-                  <p>${product.price}</p>
+
+                  <p>{product.title}</p>
+                  <p><strong>${product.price}</strong></p>
+                </div>
               </Link>
-            ))}
-        </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

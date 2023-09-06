@@ -24,6 +24,7 @@ body {
   position: fixed;
   width: 100vw;
   height: 10vh;
+  z-index: 100;
 }
 
 
@@ -108,7 +109,7 @@ body {
 .shop-nav {
   margin-top: 10%;
   margin-left: 5%;
-  letter-spacing: 1rem;
+  letter-spacing: 0.5rem;
   position: fixed;
 }
 
@@ -138,7 +139,15 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: auto;
-  gap: 20px ;
+  gap: 0 7rem;
+}
+
+
+.item {
+  width: 300px;
+  list-style-type: none;
+  margin-top: 10%;
+  cursor: pointer;
 }
 
 
@@ -149,20 +158,45 @@ body {
 
 
 .item-img {
+  object-fit: contain;
   height: 350px;
   width: 300px;
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: .5s ease;
 }
 
 
-.item {
+.item-img-container {
+  position: relative;
+}
+
+
+.item-img-container:hover .item-img {
+  opacity: 0.3;
+}
+
+
+.item-img-container:hover .see-more {
+  opacity: 1;
+}
+
+
+.see-more {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  width: 5rem;
+  border: 2px solid black;
+  text-align: center;
   font-weight: bold;
-  letter-spacing: 3px;
-  margin-top: 10%;
-  cursor: pointer;
 }
 
 
@@ -177,16 +211,17 @@ body {
 /* shop nav hover */
 .shop-nav-item {
   position: relative;
+  text-transform: uppercase;
 }
 
 
 .shop-nav-item::before {
-  content: attr(data-testid);
+  content: attr(id);
   position: absolute;
   top: 30px;
   left: 30px;
   opacity: 0;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 
@@ -225,9 +260,9 @@ body {
 
 
 .product-img {
-  border: 1px solid red;
   width: 20rem;
   height: 25rem;
+  object-fit: contain;
 }
 
 
@@ -235,7 +270,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 2.5rem;
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 
@@ -252,14 +287,8 @@ body {
 }
 
 
-.specs-container > strong:first-of-type {
+.specs-container > strong {
   font-size: 2rem;
-  padding: 1.5rem;
-}
-
-.specs-container > strong:nth-of-type(2) {
-  letter-spacing: 5px;
-  padding: 1.5rem;
 }
 
 
@@ -269,7 +298,6 @@ body {
   color: black;
   padding: 1rem;
   cursor: pointer;
-  margin-left: 1.5rem;
 }
 
 
@@ -277,6 +305,20 @@ body {
   opacity: 0.8;
 }
 
+
+.specs-container p {
+  width: 30rem;
+  margin-top: 2rem;
+}
+
+
+.specs-container div {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem ;
+  font-size: 1.5rem;
+}
 
 
 /* Cart */
