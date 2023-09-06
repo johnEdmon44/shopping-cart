@@ -44,48 +44,30 @@ body {
   padding: 1rem;
   margin-inline: 4rem;
   letter-spacing: 1rem;
+  display: inline-block;
 }
 
 
 .main-nav h1 {
   letter-spacing: 10px;
   font-family: "Abel", sans-serif;
+  margin-left: 2rem;
 }
 
 
-.main-nav > * {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  align-items: center;
+.main-nav a::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: width .2s ease-in;
+  display: block;
 }
 
 
-/*///////////////////////////////////////////////////// nav-hover ///////////////////////////////////////////////////////////////*/
-
-.nav-item {
-  position: relative;
-  display: inline-block;
-  padding: 10px;
-  font-size: 16px;
+.main-nav a:hover::after {
+  width: 100%;
 }
-
-.nav-item::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0px;
-  left: 80px;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-  padding: 10px;
-  letter-spacing: 1rem;
-}
-
-.nav-item:hover::before {
-  opacity: 0.5;
-  top: -20px;
-  left: 0px;
-}
-
 
 
 /*///////////////////////////////////////////////////// Home ///////////////////////////////////////////////////////////////*/
