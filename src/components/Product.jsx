@@ -3,22 +3,39 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import ProductsContext from "./productsContext";
+import CartContext from "./CartContext";
 
 
-export default function Product({dispatch}) {
-  const { products }= useContext(ProductsContext);
+export default function Product() {
+  const { products } = useContext(ProductsContext);
+  const { cart, addToCart } = useContext(CartContext);
   const { id } = useParams();
   const [addedToCart, setAddedToCart] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   const product = products.find((item) => item.id === Number(id));
 
   if(!product) {
     return <p>Loading...</p>
   }
+  
 
   const handleAddToCart = () => {
-    dispatch({ type: 'ADD_TO_CART', payload: product });
-    setAddedToCart(true)
+    setAddedToCart(true);
+    addToCart({...product, quantity});
+    console.log(cart);
+  }
+  
+
+  const increaseQty = () => {
+    setQuantity(quantity + 1);
+  }
+
+
+  const decreaseQty = () => {
+    if(quantity > 1) {
+      setQuantity(quantity - 1);
+    }
   }
 
 
@@ -44,14 +61,20 @@ export default function Product({dispatch}) {
 
             <div>
               <strong>${product.price}</strong>
-              <button onClick={handleAddToCart}>ADD TO CART</button>
-              {addedToCart && <p>Added to cart successfully!</p>}
+
+              <div className="qty-container">
+                <button className="qty-button" onClick={decreaseQty}>-</button>
+                <input type="number" id="qty" name="qty" placeholder="qty" value={quantity} onChange={(e) => setQuantity(e.target.value)} className="no-spin-button"></input>
+                <button className="qty-button" onClick={increaseQty}>+</button>
+              </div>
+
+              <button onClick={handleAddToCart} className="add-to-cart">Add to cart</button>
             </div>
           </div>
-
         </div>
-      </div>
 
+      </div>
+    
     </section>
   )
 }

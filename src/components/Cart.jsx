@@ -1,16 +1,44 @@
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import { paymentOptions } from "./data/paymentOptions";
+import CartContext from "./CartContext";
+import { useContext } from "react";
 
 
-export default function Cart({ cart, dispatch }) {
-  const handleRemoveFromCart = item => {
-    dispatch({ type: 'REMOVE_FROM_CART', payload: item });
-  };
+export default function Cart() {
+  const { cart, removeFromCart, clearCart } = useContext(CartContext);
+
+  const handleRemoveFromCart = (product) => {
+    removeFromCart(product);
+  }
+
+  const idGenerator = () => {
+    for (let i = 0; i < 9; i++) {
+      const id = Math.floor(Math.random() * 100) + 1;
+      return id;
+    }
+  }
 
   const handleClearCart = () => {
-    dispatch({ type: 'CLEAR_CART' });
-  };
+    clearCart([]);
+  }
+
+  const totalPrice = (price, quantity) => {
+    return price * quantity;
+  }
+
+
+  if (!cart || cart.length === 0) {
+    return (
+      <section>
+        <Navbar />
+        <div className="empty-cart">
+          <p>Your cart is empty.</p>
+          <Link to="/shop">SHOP</Link>
+        </div>
+      </section>
+    )
+  }
 
 
   return (
@@ -18,38 +46,28 @@ export default function Cart({ cart, dispatch }) {
       <Navbar />
 
       <h1>Cart</h1>
-
-      {cart.length === 0 ? (
-        <div className="empty-cart">
-          <p>Your cart is empty.</p>
-          <Link to="/shop">SHOP</Link>
-        </div>
-      ) : (
         <div className="cart-container">
-
-            <ul>
-              {cart.map(item => ( 
-                <li key={item.id} className="cart-item">
+          <ul>
+            {cart.map(product => ( 
+              <li key={idGenerator()} className="cart-item">
+                <div>
+                  <img src={product.image} alt={product.title} className="cart-img"></img>
                   <div>
-                    <div className="cart-img">
-                      <p>img</p>
-                    </div>
-
-                    <div>
-                      <Link to={`/product/${item.id}`} style={{textDecoration: "none", color: "black"}}>
-                        <strong>{item.name}</strong>
-                      </Link>
-                      <p>Price: ${item.price.toFixed(2)}</p>
-                    </div>
+                    <Link to={`/product/${product.id}`} style={{textDecoration: "none", color: "black"}}>
+                    <strong>{product.title}</strong>
+                    </Link>
+                    <p>QTY: {product.quantity}</p>
+                    <p>Price: ${product.price.toFixed(2)}</p>
+                    <p>Total price: ${totalPrice(product.price, product.quantity)}</p>
                   </div>
+                </div>
 
-                  <button onClick={() => handleRemoveFromCart(item)}>
+                <button onClick={() => handleRemoveFromCart(product)}>
                     Remove
-                  </button>
-                </li>
-              ))}
-            </ul>
-
+                </button>
+              </li>
+            ))}
+          </ul>
 
           <div className="cart-total-container">
               <div className="cart-total">
@@ -72,7 +90,7 @@ export default function Cart({ cart, dispatch }) {
                 </div>
 
                 <div className="total-buttons-container">
-                  <button onClick={handleClearCart} className="total-buttons">
+                  <button className="total-buttons" onClick={handleClearCart}>
                     Clear Cart
                   </button>
 
@@ -82,20 +100,18 @@ export default function Cart({ cart, dispatch }) {
                 </div>            
             </div>
 
-
             <div className="payment-container">
               <h3>Payment options</h3>
 
               <div className="payment-icons-container">
                 {paymentOptions.map((icon, index) => (
-                    <img src={icon.img} className="payment-icon" key={index}></img>
+                  <img src={icon.img} className="payment-icon" key={index}></img>
                 ))}
               </div>
             </div>
 
           </div>
         </div>
-      )}
     </section>
   );
 }

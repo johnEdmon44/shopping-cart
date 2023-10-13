@@ -25,7 +25,7 @@ export const ProductsProvider = ({ children }) => {
 
     const fetchCategories = async() => {
       try {
-        const response = await fetch('https://fakestoreapi.com/products/categories')
+        const response = await fetch('https://fakestoreapi.com/products/categories');
 
         if (!response.ok) {
           throw new Error("Network error");
@@ -49,4 +49,4 @@ export const ProductsProvider = ({ children }) => {
   );
 };
 
-export default ProductsContext; // Export the ProductsContext as the default export
+export default ProductsContext;
