@@ -7,9 +7,6 @@ export default function Home() {
       <Navbar />
 
       <div>
-        <video id="full-page-video" autoPlay muted loop role="video">
-          <source src={Xiaomi}></source>
-        </video>
       </div>
     </section>
   )
