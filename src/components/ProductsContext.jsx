@@ -6,40 +6,24 @@ export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
 
+  const fetchData = async (url, setData) => {
+    try {
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error("Network error");
+      }
+
+      const json = await response.json();
+      setData(json);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch('https://fakestoreapi.com/products/');
-
-        if (!response.ok) {
-          throw new Error("Network error");
-        }
-
-        const json = await response.json();
-        setProducts(json);
-
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    const fetchCategories = async() => {
-      try {
-        const response = await fetch('https://fakestoreapi.com/products/categories');
-
-        if (!response.ok) {
-          throw new Error("Network error");
-        }
-
-        const json = await response.json();
-        setCategories(json);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    fetchCategories();
-    fetchProducts();
+    fetchData('https://fakestoreapi.com/products/', setProducts);
+    fetchData('https://fakestoreapi.com/products/categories', setCategories);
   }, []);
 
   return (
