@@ -8,19 +8,11 @@ import { useContext } from "react";
 export default function Cart() {
   const { cart, removeFromCart, clearCart } = useContext(CartContext);
 
-  const handleRemoveFromCart = (product) => {
-    removeFromCart(product);
-  }
-
   const idGenerator = () => {
     for (let i = 0; i < 9; i++) {
       const id = Math.floor(Math.random() * 100) + 1;
       return id;
     }
-  }
-
-  const handleClearCart = () => {
-    clearCart([]);
   }
 
   const totalPrice = (price, quantity) => {
@@ -62,8 +54,8 @@ export default function Cart() {
                   </div>
                 </div>
 
-                <button onClick={() => handleRemoveFromCart(product)}>
-                    Remove
+                <button onClick={() => removeFromCart(product)}>
+                  Remove
                 </button>
               </li>
             ))}
@@ -90,7 +82,7 @@ export default function Cart() {
                 </div>
 
                 <div className="total-buttons-container">
-                  <button className="total-buttons" onClick={handleClearCart}>
+                  <button className="total-buttons" onClick={clearCart}>
                     Clear Cart
                   </button>
 
