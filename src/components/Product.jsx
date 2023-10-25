@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import ProductsContext from "./productsContext";
-import CartContext from "./CartContext";
+import { CartContext } from "./CartContext";
 
 
 export default function Product() {

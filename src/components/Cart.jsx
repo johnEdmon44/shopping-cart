@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import { paymentOptions } from "./data/paymentOptions";
-import CartContext from "./CartContext";
+import { CartContext } from "./CartContext";
 import { useContext } from "react";
 
 
