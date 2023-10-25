@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import ProductsContext from "./productsContext";
 import { CartContext } from "./CartContext";
 
@@ -12,8 +12,13 @@ export default function Product() {
   const { id } = useParams();
   const [addedToCart, setAddedToCart] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [product, setProduct] = useState(null);
 
-  const product = products.find((item) => item.id === Number(id));
+  // const product = products.find((item) => item.id === Number(id));
+  useEffect(() => {
+    const findProduct = products.find((item) => item.id === Number(id));
+    setProduct(findProduct);
+  }, [id, products]);
 
   if(!product) {
     return <p>Loading...</p>
@@ -23,7 +28,6 @@ export default function Product() {
   const handleAddToCart = () => {
     setAddedToCart(true);
     addToCart({...product, quantity});
-    console.log(cart);
   }
   
 
