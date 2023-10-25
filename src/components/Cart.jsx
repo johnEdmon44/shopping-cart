@@ -19,6 +19,8 @@ export default function Cart() {
     return price * quantity;
   }
 
+  const totalCartValue = cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+
 
   if (!cart || cart.length === 0) {
     return (
@@ -68,7 +70,7 @@ export default function Cart() {
 
                 <div className="total">
                   <p>Sub-total</p>
-                  <p>${cart.reduce((total, item) => total + item.price, 0).toFixed(2)}</p>
+                  <p>${totalCartValue}</p>
                 </div>
 
                 <div className="total">
