@@ -7,7 +7,6 @@ Welcome to the Shopping Cart application! This web-based application allows user
 - [Features](#features)
 - [Demo](#demo)
 - [Getting Started](#getting-started)
-- [How to run locally](#how-to-run-locally)
 
 ## Features
 
@@ -30,11 +29,5 @@ To run the Shopping Cart application locally, follow these steps:
 1. Clone this repository to your local machine or download the source code files.
 2. Open the terminal and navigate to the project directory.
 3. Run the command `npm install` to install the required dependencies.
-4. Run the command `npm start` to start the development server.
-5. Open your preferred web browser and visit `http://localhost:3000` to access the application.
-
-## How to run locally
-
-1. git clone git@github.com:johnEdmon44/shopping-cart.git or download source code
-2. npm install
-3. npm run dev
+4. Run the command `npm run dev` to start the development server.
+5. Open your preferred web browser and visit `http://localhost:5173/` to access the application.
