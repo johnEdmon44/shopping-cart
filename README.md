@@ -7,7 +7,7 @@ Welcome to the Shopping Cart application! This web-based application allows user
 - [Features](#features)
 - [Demo](#demo)
 - [Getting Started](#getting-started)
-- [How to run locally](how-to-run-locally)
+- [How to run locally](#how-to-run-locally)
 
 ## Features
 
@@ -35,4 +35,6 @@ To run the Shopping Cart application locally, follow these steps:
 
 ## How to run locally
 
-1. git clone 
+1. git clone git@github.com:johnEdmon44/shopping-cart.git or download source code
+2. npm install
+3. npm run dev
