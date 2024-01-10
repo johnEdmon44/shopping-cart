@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ProductsContext from "./productsContext";
+import ProductsContext from "./ProductsContext";
 
 export default function Shop() {
   const [selectedCategory, setSelectedCategory] = useState("all");

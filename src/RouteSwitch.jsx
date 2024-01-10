@@ -3,7 +3,7 @@ import Cart from "./components/Cart";
 import Home from "./components/Home";
 import Product from "./components/Product";
 import Shop from "./components/Shop";
-import { ProductsProvider } from "./components/productsContext";
+import { ProductsProvider } from "./components/ProductsContext";
 import { CartProvider } from "./components/CartContext";
 
 
