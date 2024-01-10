@@ -7,6 +7,7 @@ Welcome to the Shopping Cart application! This web-based application allows user
 - [Features](#features)
 - [Demo](#demo)
 - [Getting Started](#getting-started)
+- [How to run locally](how-to-run-locally)
 
 ## Features
 
@@ -20,7 +21,7 @@ Welcome to the Shopping Cart application! This web-based application allows user
 
 ## Demo
 
-You can see a live demo of the Shopping Cart application [here](https://johnedmon44.github.io/shopping-cart/).
+You can see a live demo of the Shopping Cart application [here](https://659e910de7092fde26f240a3--precious-cranachan-eb0b22.netlify.app/shop).
 
 ## Getting Started
 
@@ -31,3 +32,7 @@ To run the Shopping Cart application locally, follow these steps:
 3. Run the command `npm install` to install the required dependencies.
 4. Run the command `npm start` to start the development server.
 5. Open your preferred web browser and visit `http://localhost:3000` to access the application.
+
+## How to run locally
+
+1. git clone 
