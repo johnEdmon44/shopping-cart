@@ -20,7 +20,7 @@ Welcome to the Shopping Cart application! This web-based application allows user
 
 ## Demo
 
-You can see a live demo of the Shopping Cart application [here](https://659e910de7092fde26f240a3--precious-cranachan-eb0b22.netlify.app/shop).
+You can see a live demo of the Shopping Cart application [here](https://main--precious-cranachan-eb0b22.netlify.app/).
 
 ## Getting Started
 
